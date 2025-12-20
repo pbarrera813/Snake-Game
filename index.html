@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake - Game</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación superior -->
+    <nav class="top-nav">
+        <a href="#" id="sopaLink" class="nav-btn">
+            <img src="" alt="" class="nav-icon" id="sopaIcon">
+            <span>Sopa de letras</span>
+        </a>
+        <a href="#" id="homeLink" class="nav-btn">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Página principal</span>
+        </a>
+    </nav>
+
+    <div class="nokia-phone">
+        <div class="phone-speaker"></div>
+        <div class="nokia-brand">NOKIA</div>
+        
+        <div class="screen-frame">
+            <div class="lcd-screen">
+                <div class="game-header">
+                    <span class="score" id="score">0000</span>
+                    <span class="high-score">HI: <span id="highScore">0000</span></span>
+                </div>
+                
+                <div class="game-area">
+                    <canvas id="gameCanvas"></canvas>
+                    
+                    <div class="start-overlay" id="startOverlay">
+                        <div class="snake-icon">🐍</div>
+                        <h2>SNAKE</h2>
+                        <p>Usa las flechas ↑↓←→</p>
+                        <p>para mover la serpiente</p>
+                        <p class="start-hint">Presiona ESPACIO</p>
+                        <p>para comenzar</p>
+                    </div>
+                    
+                    <div class="game-over-overlay" id="gameOverOverlay">
+                        <h2>GAME OVER</h2>
+                        <p>Puntuación: <span id="finalScore">0</span></p>
+                        <p class="restart-hint">ESPACIO para reiniciar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="keypad">
+            <!-- Cruceta / D-Pad -->
+            <div class="d-pad">
+                <button class="key arrow up" id="keyUp" aria-label="Arriba">▲</button>
+                <button class="key arrow left" id="keyLeft" aria-label="Izquierda">◄</button>
+                <div class="key center"></div>
+                <button class="key arrow right" id="keyRight" aria-label="Derecha">►</button>
+                <button class="key arrow down" id="keyDown" aria-label="Abajo">▼</button>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <button class="key action" id="startBtn">START</button>
+                <button class="key action" id="pauseBtn">PAUSE</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        Flechas del teclado para mover • ESPACIO para iniciar/reiniciar • P para pausar
+    </div>
+
+    <script src="navigation.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
